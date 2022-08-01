@@ -3,7 +3,5 @@ public class App {
         Panel panel = new Panel();
         Controller cont = new Controller();
         new Frame(panel,cont);
-
-        new Reader();
     }
 }
