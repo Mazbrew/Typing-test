@@ -21,6 +21,8 @@ public class Controller extends JPanel implements KeyListener{
     @Override
     public void keyReleased(KeyEvent e) {
         System.out.println(e.getKeyChar());
-        
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
     }
 }

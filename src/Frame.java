@@ -1,12 +1,9 @@
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 
 public class Frame extends JFrame{
     public Frame(Panel panel, Controller cont){
         super();
 
-        this.setVisible(true);
         this.setResizable(false);
         this.setTitle("Typing Test");
         this.setLayout(null);
@@ -15,7 +12,9 @@ public class Frame extends JFrame{
 
         this.add(panel);
         this.add(cont);
-        this.getContentPane().setPreferredSize(new Dimension(panel.getSize()));
-        this.pack();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
+
+        this.setVisible(true);
     }
 }

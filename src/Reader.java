@@ -9,13 +9,13 @@ public class Reader{
     private long randomLocation;
 
     public Reader() throws Exception{
-       generateWords();
+
     }
 
     public Stack<String> generateWords() throws Exception{  
         Stack<String> text = new Stack<String>();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<256;i++){
             randomLocation = (long) (Math.random() * f.length());
             
             f.seek(randomLocation);
