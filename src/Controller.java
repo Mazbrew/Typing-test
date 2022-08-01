@@ -4,8 +4,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Controller extends JPanel implements KeyListener{
-    public Controller() {
+    private Panel panel;
+    
+    public Controller(Panel panel) {
         super();
+
+        this.panel = panel;
+
         this.addKeyListener(this);
         this.setFocusable(true);
     }
@@ -20,9 +25,13 @@ public class Controller extends JPanel implements KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println(e.getKeyChar());
-        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+        if(e.getKeyCode() == KeyEvent.VK_F5){
+            panel.reset();
+        }else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.exit(0);
+        }else if(e.getKeyCode()>=32 && e.getKeyCode()<=126){
+            panel.updateCursor();
         }
+        panel.repaint();
     }
 }
