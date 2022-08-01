@@ -1,7 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
         Panel panel = new Panel();
-        new Frame(panel);
+        Controller cont = new Controller();
+        new Frame(panel,cont);
 
         new Reader();
     }
