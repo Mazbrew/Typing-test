@@ -15,6 +15,9 @@ public class TimerBar extends JPanel{
     private double duration;
     private double fullDuration;
 
+    // false for stop , true for start
+    private boolean state = false;
+
     public TimerBar(Panel panel,Theme theme, double duration){
         this.panel = panel;
         this.theme = theme;
@@ -23,13 +26,6 @@ public class TimerBar extends JPanel{
         
 
         this.setBounds(0,0,panel.getWidth(),panel.getHeight());
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            public void run() {
-                countdown();
-            }
-        }, 0, 1);
     }
 
     @Override
@@ -43,6 +39,27 @@ public class TimerBar extends JPanel{
     private void countdown(){
         duration--;
         repaint();
-        System.out.println(duration);
+    }
+
+    public void startTimer(){
+        state = true;
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                countdown();
+            }
+        }, 0, 1);
+    }
+
+    public boolean timerState(){
+        return state;
+    }
+
+    public void resetTimer(){
+        state = false;
+        duration = fullDuration;
+        repaint();
+        timer.cancel();
+        timer.purge();
     }
 }

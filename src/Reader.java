@@ -42,7 +42,6 @@ public class Reader{
                 }           
             }
         }
-        System.out.println(text);
 
         return text;
     }

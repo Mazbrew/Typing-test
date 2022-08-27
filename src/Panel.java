@@ -85,7 +85,6 @@ public class Panel extends JPanel{
 
                 displayString[i] ="";
                 displayString[i] = stringStack.pop();
-                System.out.println(i);
             }else{
                 displayString[i] = displayString[i]+" "+stringStack.pop();
             }    
