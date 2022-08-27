@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 
 public class Frame extends JFrame{
-    public Frame(Panel panel, Controller cont){
+    public Frame(Panel panel, Controller cont, TimerBar timerBar){
         super();
 
         this.setResizable(false);
@@ -10,8 +10,10 @@ public class Frame extends JFrame{
         
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        this.add(timerBar);
         this.add(panel);
         this.add(cont);
+        
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setUndecorated(true);
 

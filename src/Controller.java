@@ -21,6 +21,10 @@ public class Controller extends JPanel implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) { 
+        if(e.getKeyCode()>=32 && e.getKeyCode()<=126){
+            panel.updateCursor();
+        }
+        panel.repaint();
     }
 
     @Override
@@ -29,8 +33,6 @@ public class Controller extends JPanel implements KeyListener{
             panel.reset();
         }else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.exit(0);
-        }else if(e.getKeyCode()>=32 && e.getKeyCode()<=126){
-            panel.updateCursor();
         }
         panel.repaint();
     }

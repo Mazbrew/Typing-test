@@ -12,7 +12,7 @@ public class Panel extends JPanel{
 
     private int fontSize = 30;
 
-    private Theme theme = new Theme();
+    private Theme theme;
 
     private Reader reader;
 
@@ -24,8 +24,10 @@ public class Panel extends JPanel{
     private int cursorX=0;
     private int cursorY=0;
 
-    public Panel()throws Exception{
+    public Panel(Theme theme)throws Exception{
         super();
+
+        this.theme = theme;
 
         reader = new Reader();
         stringStack = reader.generateWords();
